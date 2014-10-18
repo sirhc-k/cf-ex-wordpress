@@ -1,14 +1,9 @@
 ---
 applications:
-- name: mywordpress
+- name: bm-wp-demo
   memory: 128M 
   path: .
   buildpack: https://github.com/dmikusa-pivotal/cf-php-build-pack.git
-  random-route: true
+  host: ids-urex
   services:
-  - mysql-db
-  env:
-    SSH_HOST: user@your-ssh-server
-    SSH_PATH: /full/or/relative/path/on/ssh/server
-    SSH_KEY_NAME: sshfs_rsa
-    SSH_OPTS: '["cache=yes", "kernel_cache", "compression=no", "large_read", "Ciphers=arcfour"]'
+  - mysql-bm-wp
